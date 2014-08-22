@@ -1,3 +1,23 @@
-<div id='container'>
+<div id='container' ng-model="shortly.links">
   <!-- Your html here -->
+  <div ng-controller="LinksController">
+    <div class='navigation'>
+      <ul>
+        <li><a href='#/links' class='selected'>All Links</a></li>
+        <li><a href='#/shorten' class='selected'>Shorten</a></li>
+        <li><a href='#/logout' class='selected'>Logout</a></li>
+      </ul>
+    </div>
+  <div class="links">
+    <div class="link" ng-repeat="link in data.links | filter:search | orderBy: 'visits'">
+      <img src="assests/redirect_icon.png">
+      <div class='visists'><span class='count'>{{ link.visists }}</span>
+        Visists</div>
+      <div clas='original'>{{ link.url }}</div>
+      <a href='http://localhost:8000/api/links/{{ link.code }}'>{{ link
+        .base_url }}/{{ link.code }}</a>
+     </ul>
+    </div>
+  </div>
 </div>
+

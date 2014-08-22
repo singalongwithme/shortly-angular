@@ -1,6 +1,19 @@
 <div id='container'>
 <!-- Your code here -->
-
+  <div ng-controller='ShortenController'>
+    <div class='navigation'>
+    <ul>
+      <li><a href='#/links' class='selected'>All Links</a></li>
+      <li><a href='#/shorten' class='selected'>Shortens</a></li>
+      <li><a href='#/logout' class='selected'>Logout</a></li>
+    </ul>
+    </div>
+  <form method="submit" ng-submit="addLink(link)" novalidate>
+    <input name="url" ng-model="link.url" type="url" placeHolder="Type Valid
+    Url Here" />
+    <button type="submit" value="Shorten">Shorten!</button>
+  </form>
+  </div>
 </div>
 
 
